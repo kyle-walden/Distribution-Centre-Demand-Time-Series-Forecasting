@@ -7,11 +7,11 @@ Forecasting distribution centre demand at a product SKU level, utilizing Faceboo
 ## Introduction
 Supply chains typically follow stages of suppliers, manufacturers, distributors, retailers, and then customers. Forecasting is the basis of strategic and planning decisions in a supply chain. Specifically in production, it enables planning for components in likes of capacity, scheduling, inventory, and aggregate planning. This also interrelates to functions of marketing, finance, and personnel. In scope of production, this project looks at typical disaggregated planning needs which would ultimetly feed a Master Production Schedule (MPS) - individual SKUs are forecasted at specific distribution centres.
 
-**This document outlines topics of the model's methodology, modelling tools and techniques, and provides a summary of results and final discussion points. For a detailed code repository, please see attached [Jupyter Notebook]() to this repository.**
+**This document outlines topics of the model's methodology, modelling tools and techniques, and provides a summary of results and final discussion points. For a detailed code repository, please see attached [Jupyter Notebook](https://github.com/kyle-walden/Distribution-Centre-Demand-Time-Series-Forecasting/blob/master/Notebook_1%20(1).ipynb) to this repository.**
 
 ## Methodology
 ### Dataset
-The dataset used initially comprises of 5 vairables 
+The dataset obtained comprises of unique orders from four warehouses, globally located anonymously. The warehouses distribute 2160 unique products within 33 unique categories. The dataset used initially comprises of 5 vairables
 * Product_Code: The product name encoded
 * Warehouse: Warehouse name encoded
 * Product_Category: Product Category for each Product_Code encoded
@@ -29,8 +29,19 @@ The time-series forecasting model used is Facebook Prophet. "Prophet is a proced
 
 ## Results
 As stated, the input for the forecasting model is historical demand for a specified individual SKU and distribution centre (warehouse). Therefore, all results shown below report such an input. In the case of the below results, the input was 'Product_1359' for 'Warehouse_S'. 
+![Forecast_plot.png.png](Forecast_plot.png.png)
+**Fig 1. Modelled Forecast Plot of Predictive Dataframe**. A 365 day - one year - forecast was produced.
 
+![Seasonal_Results.png.png](Seasonal_Results.png.png)
+**Fig. 2. Overall Trend, Yearly Seasonality, and Weekly Seasonality.**
+
+![MAPE_CV_Metric.png.png]!(MAPE_CV_Metric.png.png)
+**Fig 3. MAPE Plot.** Dots show the absolute percent error for each prediction in cross-validation dataframe. The blue line shows the MAPE, where the mean is taken over a rolling window of the dots.
+
+The cross-validation assessment was based on a performance horizon of 365 days, starting with 730 days of training data in the first cutoff and then making predictions every 180 days. In this case, making 5 total forecasts within the given time period. 
+
+In the case of this given product and warehouse input, a 33.17% MAPE (error) was achieved. 
 
 ## Discussion
-
-Forecasting distribution centre demand at an exploded SKU level, utilizing prophet model forecasting
+* As stated, the performance of the model is dependant on the inputs
+* A better-developed model would be achieved if holiday effects (calender holidays) were inputed as parameters in the model. Since the warehouse locations are anonymous, inputting such a parameter in this project is void.
