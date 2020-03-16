@@ -30,13 +30,18 @@ The time-series forecasting model used is Facebook Prophet. "Prophet is a proced
 ## Results
 As stated, the input for the forecasting model is historical demand for a specified individual SKU and distribution centre (warehouse). Therefore, all results shown below report such an input. In the case of the below results, the input was 'Product_1359' for 'Warehouse_S'. 
 ![Forecast_plot.png.png](Forecast_plot.png.png)
+
 **Fig 1. Modelled Forecast Plot of Predictive Dataframe**. A 365 day - one year - forecast was produced.
 
 ![Seasonal_Results.png.png](Seasonal_Results.png.png)
+
 **Fig. 2. Overall Trend, Yearly Seasonality, and Weekly Seasonality.**
 
-![MAPE_CV_Metric.png.png]!(MAPE_CV_Metric.png.png)
-**Fig 3. MAPE Plot.** Dots show the absolute percent error for each prediction in cross-validation dataframe. The blue line shows the MAPE, where the mean is taken over a rolling window of the dots.
+![MAPE_CV_Metric.png.png](MAPE_CV_Metric.png.png)
+
+**Fig 3. MAPE Plot.** 
+
+Dots show the absolute percent error for each prediction in cross-validation dataframe. The blue line shows the MAPE, where the mean is taken over a rolling window of the dots.
 
 The cross-validation assessment was based on a performance horizon of 365 days, starting with 730 days of training data in the first cutoff and then making predictions every 180 days. In this case, making 5 total forecasts within the given time period. 
 
