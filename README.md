@@ -2,7 +2,7 @@
 **Project Report**
 
 ## Abstract
-Forecasting distribution centre demand at a product SKU level, utilizing Facebook's Prophet model forecasting. The time-series forecasting model takes an input of a warehouse (distribution centre) and a specified product ID (SKU). Due to disaggregation, exact model accuracy varies based on inputs. Model evaluation (forecast accuracy) is based on the forecast's Mean Absolute Percentage Error (MAPE) metric - reported in the results section of each forecast.
+Forecasting distribution centre demand at a product SKU level, utilizing Facebook's Prophet model forecasting. The time-series forecasting model takes an input of a warehouse (distribution centre) and a specified product ID (SKU). Due to disaggregation, exact model accuracy varies based on inputs. Model evaluation (forecast accuracy) is based on cross-validation metrics - specifically the Mean Absolute Percentage Error (MAPE) - reported in the results section of each forecast.
 
 ## Introduction
 Supply chains typically follow stages of suppliers, manufacturers, distributors, retailers, and then customers. Forecasting is the basis of strategic and planning decisions in a supply chain. Specifically in production, it enables planning for components in likes of capacity, scheduling, inventory, and aggregate planning. This also interrelates to functions of marketing, finance, and personnel. In scope of production, this project looks at typical disaggregated planning needs which would ultimetly feed a Master Production Schedule (MPS) - individual SKUs are forecasted at specific distribution centres.
