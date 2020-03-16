@@ -28,18 +28,22 @@ The programming language of choice was Python. Numerous libraries were used thro
 The time-series forecasting model used is Facebook Prophet. "Prophet is a procedure for forecasting time series data based on an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality, plus holiday effects. It works best with time series that have strong seasonal effects and several seasons of historical data. Prophet is robust to missing data and shifts in the trend, and typically handles outliers well." ([Facebook](https://facebook.github.io/prophet/), 2019).
 
 ## Results
-As stated, the input for the forecasting model is historical demand for a specified individual SKU and distribution centre (warehouse). Therefore, all results shown below report such an input. In the case of the below results, the input was 'Product_1359' for 'Warehouse_S'. 
+As stated, the input for the forecasting model is historical demand for a specified individual SKU and distribution centre (warehouse). Therefore, all results shown below report such an input. In the case of the below results, the input was 'Product_1432' for 'Warehouse_S'. 
+
 ![Forecast_plot.png.png](Forecast_plot.png.png)
 
 **Fig 1. Modelled Forecast Plot of Predictive Dataframe**. A 365 day - one year - forecast was produced.
+
 
 ![Seasonal_Results.png.png](Seasonal_Results.png.png)
 
 **Fig. 2. Overall Trend, Yearly Seasonality, and Weekly Seasonality.**
 
+
 ![MAPE_CV_Metric.png.png](MAPE_CV_Metric.png.png)
 
 **Fig 3. MAPE Plot.** 
+
 
 Dots show the absolute percent error for each prediction in cross-validation dataframe. The blue line shows the MAPE, where the mean is taken over a rolling window of the dots.
 
