@@ -7,6 +7,8 @@ Forecasting distribution centre demand at a product SKU level, utilizing Faceboo
 ## Introduction
 Supply chains typically follow stages of suppliers, manufacturers, distributors, retailers, and then customers. Forecasting is the basis of strategic and planning decisions in a supply chain. Specifically in production, it enables planning for components in likes of capacity, scheduling, inventory, and aggregate planning. This also interrelates to functions of marketing, finance, and personnel. In scope of production, this project looks at typical disaggregated planning needs which would ultimetly feed a Master Production Schedule (MPS) - individual SKUs are forecasted at specific distribution centres.
 
+**This document outlines topics of the model's methodology, modelling tools and techniques, and provides a summary of results and final discussion points. For a detailed code repository, please see attached [Jupyter Notebook]() to this repository.**
+
 ## Methodology
 ### Dataset
 The dataset used initially comprises of 5 vairables 
